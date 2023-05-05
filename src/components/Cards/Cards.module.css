@@ -1,0 +1,7 @@
+.contenedor{
+    background-color: black; 
+    background-position: center center;
+    display: inline-block;
+    padding: 5em;
+    margin: 1em;
+}
