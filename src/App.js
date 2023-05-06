@@ -18,8 +18,8 @@ function App() {
    const [access, setAccess] = useState(false);
 
    const navigate = useNavigate();
-   const EMAIL = 'carlos@gmail.com';
-   const PASSWORD = '1234asdf';
+   const EMAIL = '';
+   const PASSWORD = '';
 
    function login(userData) {
       if (userData.password === PASSWORD && userData.email === EMAIL) {
