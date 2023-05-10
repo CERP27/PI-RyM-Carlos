@@ -1,20 +1,70 @@
 import style from './Card.module.css'
-import { Link } from 'react-router-dom';
-const Card = (props)=> {
+import { Link, useLocation } from 'react-router-dom';
+import { addFav, filterCards, removeFav } from '../../redux/actions';
+import { connect } from 'react-redux';
+import { useState, useEffect } from 'react';
+
+
+const Card = ({id,name,species,gender,image,origin,status,removeFav,addFav,onClose, myFavorites,filterCards})=> {
+   
+   const [isFav,setIsFav] = useState(false);
+   const {pathname} =useLocation()
+
+   const handleFavorite = ()=>{
+      if(isFav){
+         setIsFav(false);
+         removeFav(id)
+         filterCards('allCharacters') // esto permite que se re-renderice la carta al quitarle el fav
+      }else{
+         setIsFav(true);
+         addFav({id,name,species,gender,image,origin,status,onclose})
+      }
+   }
+
+   useEffect(() => {
+      myFavorites.forEach((fav) => {
+         if (fav.id === id) {
+            setIsFav(true);
+         }
+      });
+      
+   }, [myFavorites]);
    
    return (
+      
       <div className={style.container}>
-         <button className={style.boton} onClick={()=>props.onClose(props.id)}>Eliminar</button>
-         <img className={style.photo} src={props.image} alt={`Imagen de ${props.name}`} />
-         <Link to={`/details/${props.id}`}>
-            <h2>{props.name}</h2>
+         {isFav ? (
+         <button onClick={handleFavorite}>❤️</button>
+         ) : (
+         <button onClick={handleFavorite}>🤍</button>
+         )}
+         {pathname==='/home' ? <button className={style.boton} onClick={()=> {onClose(id);  setIsFav(false)}}>Eliminar</button>:''}
+         <img className={style.photo} src={image} alt={`Imagen de ${name}`} />
+         <Link to={`/details/${id}`}>
+            <h2>{name}</h2>
          </Link>
-         <h2>{props.status}</h2>
-         <h2>{props.species}</h2>
-         <h2>{props.gender}</h2>
-         <h2>{props.origin}</h2>
+         
+         <h2>{species}</h2>
+         <h2>{gender}</h2>
+         
       </div>
    );
 }
 
-export default Card
+const mapStateToProps = (state) =>{
+   return {
+      myFavorites : state.myFavorites
+   }
+}
+
+const mapDispatchToProps= (dispatch)=>{
+   return {
+      addFav: (character)=>{ dispatch(addFav(character))},
+      removeFav: (id) => {dispatch(removeFav(id))},
+      filterCards: (pepito) =>{dispatch(filterCards(pepito))}
+   }
+}
+
+export default connect(
+   mapStateToProps,
+   mapDispatchToProps)(Card)

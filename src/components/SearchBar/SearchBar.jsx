@@ -15,9 +15,9 @@ import style from './SearchBar.module.css'
 
    return (
       <div className={style.inputg}>         
-         <button className={style.submiti} onClick={random}><span>RANDOM</span></button>                      
+         <button className={style.submiti} onClick={random}><span>🌀</span></button>                      
          <input placeholder="Ingresa el ID del personaje"  id="input-field" type='search' value={id} onChange={handleChange}/>
-         <button className={style.submit} onClick={()=>onSearch(id)}><span>AGREGAR</span></button>    
+         <button className={style.submit} onClick={()=>onSearch(id)}><span>➕</span></button>    
          
       </div>
    );

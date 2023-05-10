@@ -10,22 +10,28 @@ const NavBar = ({onSearch,logout})=>{
         <div className={style.nav}>
             <div>
             <Link to="/home">
-                <button className={style.submit}><span>HOME</span></button>
+                <button className={style.submit}><span>🏠</span></button>
             </Link>
             </div>
 
             <div>
-            {pathname==='/home' ? <SearchBar onSearch={onSearch}/> : ''}
+            <Link to="/about">
+                <button className={style.submit}><span>👨</span></button>
+            </Link>
+            </div>
+
+            <div>
+            {pathname==='/home' ? <SearchBar onSearch={onSearch} className={style.search}/> : ''}
             </div>
             
             <div>
-            <Link to="/about">
-                <button className={style.submit}><span>ABOUT</span></button>
+            <Link to="/favorite">
+                <button className={style.submit}><span>⭐</span></button>
             </Link>
             </div>
 
             <div>
-                <button className={style.submit} onClick={logout}><span>LogOut</span></button>
+                <button className={style.submit} onClick={logout}><span>🔒</span></button>
             </div>
 
         </div>

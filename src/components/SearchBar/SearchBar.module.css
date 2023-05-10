@@ -3,11 +3,11 @@
   flex-direction: row;
   margin: 0 auto;
   justify-content: center;
-  max-width: 160px;
+ 
 }
 .submiti {
-  font-size: 17px;
-  padding: 0.5em 2em;
+  font-size: 20px;
+  padding: 0.5em 0.5em;
   border: transparent;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
   background: #2E2E2E;
@@ -16,8 +16,8 @@
 }
 
 .submit {
-  font-size: 17px;
-  padding: 0.5em 2em;
+  font-size: 20px;
+  padding: 0.5em 0.5em;
   border: transparent;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
   background: #2E2E2E;
@@ -37,7 +37,7 @@
 
 .submit span {
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

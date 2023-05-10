@@ -8,6 +8,7 @@ import NavBar from './components/NavBar/NavBar';
 import Details from './routes/details'
 import About from './routes/about'
 import Form from './components/Form/Form';
+import Favorite from './components/Favorites/Favorites';
 
 
 
@@ -93,6 +94,7 @@ function App() {
          <Route path='/' element={<Form login={login} />} />
          <Route path='/home' element={<Cards characters={characters} onClose ={onClose}/>}/>
          <Route path='/about' element={<About/>} />
+         <Route path='/favorite' element={<Favorite/>} />
          <Route path='/details/:id' element={<Details />}/> 
       </Routes>
       </div>
