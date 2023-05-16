@@ -10,9 +10,6 @@ import About from './routes/about'
 import Form from './components/Form/Form';
 import Favorite from './components/Favorites/Favorites';
 
-
-
-
 function App() {
    const [characters,setCharacters] = useState([])
    
@@ -49,7 +46,7 @@ function App() {
    //    });
    // }
    function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+      axios(`http://127.0.0.1:3001/rickandmorty/character/:${id}`).then(
         ({ data }) => {
           const respuesta = verificarPersonaje(data.id, characters);
           if (respuesta === true) window.alert("El personaje ya existe no se puede repetir");
