@@ -9,7 +9,7 @@
    const [character,setCharacter] = useState({})
    
    useEffect(() => {
-      axios(`http://127.0.0.1:3001/rickandmorty/character/:${id}`).then(({ data }) => {
+      axios(`http://127.0.0.1:3001/rickandmorty/character/${id}`).then(({ data }) => {
          if (data.name) {
             setCharacter(data);
          } else {
@@ -23,7 +23,8 @@
 
       <div >
          <h1>{character.name}</h1>
-         <h1>{character.origin?.name}</h1>
+         <h1>{character.origin}</h1>
+         <img src={character.image} alt={character.name} />
       </div>
    )
  }

@@ -49,7 +49,7 @@ const Favorite = ({myFavorites})=>{
                      status={status}
                      species={species}
                      gender={gender}
-                     origin={origin.name}
+                     origin={origin}
                      image={image}
                      onClose={onClose}
                   />

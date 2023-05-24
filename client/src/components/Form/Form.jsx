@@ -16,9 +16,7 @@ const Form = (props)=>{
         setUserData({
             ...userData,
             [event.target.name]:event.target.value
-        })
-
-        
+        })        
 
         setErrors({
             ...errors,
@@ -31,12 +29,6 @@ const Form = (props)=>{
         login(userData)
     }
 
-    // useEffect(()=>{
-    //     setErrors({
-    //         ...errors,
-
-    //     })
-    // },[])
 
     return (
         <div className={style.loginbox}>
