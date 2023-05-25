@@ -14,6 +14,12 @@ server.use(express.json());
 server.use(cors())
 server.use('/rickandmorty', router);
 
+
+//Para toda aquella ruta que no tenga /rickandmorty dara un error 404 Not Found
+server.use("*",(req,res)=>{
+    res.status(404).json({error:'Not Found'})
+})
+
 // server.use((req, res, next) => {
 //     res.header('Access-Control-Allow-Origin', '*');
 //     res.header('Access-Control-Allow-Credentials', 'true');
