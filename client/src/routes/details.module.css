@@ -1,0 +1,44 @@
+.details{
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.details img{
+    max-width: 25rem;
+}
+
+@media (min-width : 600px){
+    .details{
+        display: flex;
+        flex-direction: row;
+        gap:1em;
+        align-items: center;
+        justify-content: space-evenly;
+        
+    }
+
+    .details img{
+        min-width: 15rem;
+    }
+}
+
+@media (min-width: 850px){
+    .details img{
+        min-width: 25rem;
+    }
+
+    .pjInfo{
+        width: 35rem;
+    }
+}
+
+.pjInfo{
+    margin: 1.5em;
+    padding: 1.5em;
+    border-radius: 50px;
+    min-width: 15rem;
+    background-color: rgba(240, 255, 255, 0.368);
+}

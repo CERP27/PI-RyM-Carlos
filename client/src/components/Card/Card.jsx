@@ -32,20 +32,29 @@ const Card = ({id,name,species,gender,image,origin,status,removeFav,addFav,onClo
    
    return (
       
-      <div className={style.container}>
+      <div className={style.card}>
+         <div className={style.bttns}>
          {isFav ? (
-         <button onClick={handleFavorite}>❤️</button>
+         <button className={style.favBttn} onClick={handleFavorite}>❤️</button>
          ) : (
-         <button onClick={handleFavorite}>🤍</button>
+         <button className={style.favBttn} onClick={handleFavorite}>🤍</button>
          )}
-         {pathname==='/home' ? <button className={style.boton} onClick={()=> {onClose(id);  setIsFav(false)}}>Eliminar</button>:''}
-         <img className={style.photo} src={image} alt={`Imagen de ${name}`} />
-         <Link to={`/details/${id}`}>
-            <h2>{name}</h2>
-         </Link>
+
+         {pathname==='/home' ? <button className={style.boton} onClick={()=> {onClose(id);  setIsFav(false)}}>❌</button>:''}
+
+         </div>
          
+         <div className={style.photo}>
+         <img src={image} alt={`Imagen de ${name}`} />
+         </div>
+         
+         <div className={style.info}>
+         <Link className={style.nameLink} to={`/details/${id}`}>
+            <h2>{name}</h2>
+         </Link>         
          <h2>{species}</h2>
          <h2>{gender}</h2>
+         </div>
          
       </div>
    );

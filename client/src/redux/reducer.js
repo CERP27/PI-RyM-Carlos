@@ -28,7 +28,7 @@ const reducer = (state = initialState, { type,payload})=>{
                 ...state,
                 myFavorites:
                 payload === 'allCharacters'
-                ?[...state.myFavorites]
+                ?[...state.allCharacters]
                 :allCharactersFiltered
             }
         

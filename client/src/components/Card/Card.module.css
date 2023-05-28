@@ -1,19 +1,41 @@
-.container{
-    display: inline-block;
-    place-items: center;
-    
-    /* background-color: aqua; */
-    padding: 2em;
-    margin: 2em;
-    
-        width: 20%;
-        height: 25%;
-        border-radius: 30px;
-        background: lightgrey;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
-      
+.card{
+    display: flex;
+    flex-direction: column;    
+    max-width: 15rem;
+    min-height: 26rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.522);
+    /* border: 2px solid black; */
 }
 
-.photo{
+
+.card h2{
+    margin: 0.5em;
+    color: rgb(209, 233, 255);
+}
+.nameLink{
+    text-decoration: none;
+}
+
+.favBttn{
+    background: transparent;
+    border: none;
+}
+.boton{    
+    background: transparent;
+    border: none;
+}
+
+.bttns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em;
+    
+}
+
+img{
     border-radius: 30px;
 }
