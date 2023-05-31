@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const cors = require('cors')
 
 const {router} = require('./routes/index')
+const { conn } = require('./DB_connection');
 
 const PORT = 3001;
 
@@ -34,8 +35,10 @@ server.use("*",(req,res)=>{
 //     next();
 // });
 
-server.listen(PORT, ()=> {
+server.listen(PORT, async()=> {
     console.log('Server running at port: ' + PORT)
+    await conn.sync({force:true})
+    console.log('Entramos a la DB')
 });
 
 
