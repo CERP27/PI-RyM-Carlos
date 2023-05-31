@@ -1,9 +1,11 @@
 # PI-RyM-Carlos
 
-Clonar
+Pasos a seguir:
 
-npm install
+1. Clonar
 
-abrir un terminal para el client y hacer npm start
+2. Hacer npm install en el client y en el server
 
-abrir un terminal para el server y hacer npm run dev
+3. Abrir un terminal para el client y hacer npm start
+
+4. Abrir un terminal para el server y hacer npm run dev
