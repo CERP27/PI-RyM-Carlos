@@ -2,11 +2,7 @@
 
 // module.exports = (sequelize) => {
 //    sequelize.define('User', {
-//       id:{
-//           type:DataTypes.INTEGER,
-//           allowNull:false,
-//           primaryKey:true
-//       },
+      
       
 //       email:{
 //         type:DataTypes.STRING,
@@ -43,7 +39,8 @@ module.exports = (sequelize) => {
          type:DataTypes.STRING,
          allowNull:false,
          is:/^(?=\w*\d)(?=\w*[a-z])\S{6,10}$/
-      }
+      },
+      
     },
     {
       timestamps:false,

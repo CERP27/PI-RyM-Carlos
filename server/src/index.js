@@ -37,7 +37,7 @@ server.use("*",(req,res)=>{
 
 server.listen(PORT, async()=> {
     console.log('Server running at port: ' + PORT)
-    await conn.sync({force:true})
+    await conn.sync({alter:true})
     console.log('Entramos a la DB')
 });
 
