@@ -17,7 +17,7 @@ const Card = ({id,name,species,gender,image,origin,status,removeFav,addFav,onClo
          // filterCards('allCharacters') // esto permite que se re-renderice la carta al quitarle el fav
       }else{
          setIsFav(true);
-         addFav({id,name,species,gender,image,origin,status,onclose})
+         addFav({id,name,origin,species,gender,image,status})
       }
    }
 
@@ -54,6 +54,7 @@ const Card = ({id,name,species,gender,image,origin,status,removeFav,addFav,onClo
          </Link>         
          <h2>{species}</h2>
          <h2>{gender}</h2>
+         <h2>{origin}</h2>
          </div>
          
       </div>

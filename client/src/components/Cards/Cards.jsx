@@ -9,19 +9,13 @@ const Cards = (props)=> {
    return(
       <div className={style.container}>
          {
-            characters.map(({id,name,status,species,origin,gender,image}) =>{
+            characters.map(({id,...info}) =>{
                return(
                <>
                   <Card
                      id={id}
                      key={id}
-                     name={name}
-                     status={status}
-                     species={species}
-                     gender={gender}
-                     origin={origin.name}
-                     image={image}
-                     onClose={onClose}
+                     {...info}
                   />
                </>
                )
@@ -32,3 +26,5 @@ const Cards = (props)=> {
 }
 
 export default Cards
+
+// characters.map(({id,name,status,species,origin,gender,image}) =>{

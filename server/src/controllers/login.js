@@ -1,12 +1,29 @@
-const users = require('../utils/users');
+const  {User}  = require('../DB_connection');
+const { Op } = require('sequelize');
 
-const login = (req,res)=>{
-    const {email,password} = req.query;   
-      
-    const userFounded= users.find(user => user.email === email && user.password === password)
+const login = async(req,res) =>{
+    const { email , password } = req.query;
+    
+    if(![email,password].every(Boolean)){
+        return res.status(400).json({message:"Faltan datos"});
+    }
+    
+    try {
+    
+        const user = await User.findOne({ where:{ email } })
+    
+        if(user === null){ return res.status(404).json({message:"Usuario no encontrado"})}
+    
+        if(user.password !== password){return res.status(403).json({message:"Constraseña incorrecta"})}
+        
+        return res.status(200).json({access:true})
 
-    return userFounded ? res.status(200).json({access:true}) : res.status(200).json({access:false})
+    } catch (error) {
+        res.status(500).json({error:error.message})
+    }
+
 }
 
-
-module.exports = {login}
+module.exports = {
+    login
+}
